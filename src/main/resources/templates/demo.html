@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="utf-8">
+    <title>SpringSecurity</title>
+</head>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script>
+
+</script>
+
+<body>
+登录账号:<span sec:authentication="name"></span><br/>
+权限和角色：<span sec:authentication="authorities"></span><br/>
+<button sec:authorize="hasAuthority('insert')">新增</button><br/>
+<button sec:authorize="hasAuthority('delete')">删除</button><br/>
+<button sec:authorize="hasAuthority('update')">修改</button><br/>
+<button sec:authorize="hasAuthority('select')">查看</button><br/>
+</body>
+
+</html>
